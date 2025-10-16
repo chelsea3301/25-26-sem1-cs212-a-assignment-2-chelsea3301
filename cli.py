@@ -17,6 +17,7 @@ def display_welcome():
     print("This is a simple file manager to demonstrate")
     print("Python fundamentals: variables, expressions,")
     print("statements, and functions.")
+    print()
     # TODO: Add a blank line after the welcome message
 
 
@@ -30,6 +31,7 @@ def get_user_choice():
     print()
 
     choice = input("Enter your choice (help/calc/info/quit): ").strip().lower()
+    return choice
     # TODO: Add code to return the choice
 
 
@@ -75,14 +77,9 @@ def display_info():
 # 2. goodbye_message defaults to "Thank you for using Python CLI File Manager!"
 # 3. invalid_choice_prefix defaults to "Invalid choice:"
 # 4. valid_commands defaults to "help, calc, info, quit"
-def process_user_command(
-    choice,
-    running,
-    show_goodbye,
-    goodbye_message,
-    invalid_choice_prefix,
-    valid_commands,
-):
+def process_user_command(choice, running, show_goodbye = True, goodbye_message = "Thank you for using python CLI file Manager!",
+                         invalid_choice_prefix = "invalid choice:", valid_commands = "help, calc, info, quit):
+
     """
     Process a user command and return the updated running state.
 
@@ -120,9 +117,11 @@ def process_user_command(
 
 def main():
     """Main program loop."""
+    display_welcome()
     # Display welcome message
     # TODO: Call the function to display the welcome message
 
+    running = True
     # Main command loop
     # TODO: Initialize a variable to control the loop. Hint set running = True
     while running:
@@ -145,3 +144,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
